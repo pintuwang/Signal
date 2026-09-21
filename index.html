@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PV/MA Daily Screener</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --baseline: #c3c2b7;
+  --border: rgba(11,11,11,0.10);
+  --good: #0ca30c;
+  --warning: #d68500;
+  --serious: #ec835a;
+  --critical: #d03b3b;
+  --blue: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface-1: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255,255,255,0.10);
+    --good: #0ca30c;
+    --warning: #fab219;
+    --serious: #ec835a;
+    --critical: #e66767;
+    --blue: #3987e5;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 24px 16px 64px;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+header h1 { font-size: 1.4rem; margin: 0 0 4px; }
+header p { color: var(--text-secondary); margin: 0 0 4px; font-size: 0.9rem; }
+section { margin-top: 32px; }
+h2 { font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text-secondary); font-weight: 600; }
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ticker { font-weight: 700; font-size: 1.05rem; }
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #fff;
+}
+.badge.good { background: var(--good); }
+.badge.warning { background: var(--warning); }
+.badge.critical { background: var(--critical); }
+.badge.muted { background: var(--muted); }
+.metrics { color: var(--text-secondary); font-size: 0.85rem; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.action { margin-top: 6px; font-weight: 600; }
+.action.good { color: var(--good); }
+.action.warning { color: var(--serious); }
+.action.critical { color: var(--critical); }
+.note { color: var(--text-secondary); font-size: 0.85rem; }
+.chart-svg { width: 100%; height: auto; display: block; }
+.axis-label { font-size: 10px; fill: var(--text-secondary); }
+.axis-title { font-size: 11px; fill: var(--text-secondary); }
+.point-label { font-size: 10px; fill: var(--text-primary); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-secondary); margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.swatch.good { background: var(--good); }
+.swatch.warning { background: var(--warning); }
+.swatch.serious { background: var(--serious); }
+.swatch.critical { background: var(--critical); }
+.swatch.muted { background: var(--muted); }
+footer { margin-top: 40px; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); padding-top: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>PV/MA Buy/Sell Daily Screener</h1>
+<p>Not yet run. The daily workflow generates this report at 18:00 Singapore Time, or trigger it manually from the Actions tab ("Run workflow").</p>
+</header>
+<section>
+<h2>Watchlist</h2>
+<p class="note">AWX.SI, H02.SI, BS6.SI, O39.SI, MZH.SI, BEC.SI, 1082.KL, MSTR, KO</p>
+</section>
+<footer>
+Not investment advice. Edit WATCHLIST in screener.py to add/remove tickers.
+</footer>
+</div>
+</body>
+</html>
