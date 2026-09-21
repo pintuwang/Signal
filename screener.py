@@ -24,16 +24,20 @@ warnings.filterwarnings("ignore")
 WATCHLIST = [
     # SGX
     "AWX.SI",    # AEM Holdings
-    "H02.SI",    # Haw Par
-    "BS6.SI",    # YZJ Shipbuilding
-    "O39.SI",    # OCBC Bank
+    "A31.SI",    # Addvalue
     "MZH.SI",    # Nanofilm
-    "BEC.SI",    # BEC World
-    "1082.KL",   # Heng Huat
+    "500.SI",    # Tai Sin
+    "5185.KL",   # Affin
+    "1082.KL",   # HLFG
+    "6742.KL",   # YTL Power
 
     # US
     "MSTR",      # Strategy (MicroStrategy)
-    "KO",        # Coca-Cola
+    "ENVX",      # Enovix
+    "SLDP",      #Solid Power
+    "NU",        #Nubank
+    "NFLX",      #Netflix
+    
 
     # Add more below:
     # "AAPL",
