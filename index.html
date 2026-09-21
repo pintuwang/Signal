@@ -103,12 +103,112 @@ footer { margin-top: 40px; color: var(--muted); font-size: 0.78rem; border-top: 
 <div class="wrap">
 <header>
 <h1>PV/MA Buy/Sell Daily Screener</h1>
-<p>Not yet run. The daily workflow generates this report at 18:00 Singapore Time, or trigger it manually from the Actions tab ("Run workflow").</p>
+<p>Generated 2026-09-21 14:45 SGT &middot; 9 of 9 tickers scanned</p>
+<p>nu window 20d &middot; MA 60d &middot; Vol MA 60d &middot; Buy zone &lt;-15% below MA &middot; Vol spike &gt;100%</p>
+
 </header>
+
 <section>
-<h2>Watchlist</h2>
-<p class="note">AWX.SI, H02.SI, BS6.SI, O39.SI, MZH.SI, BEC.SI, 1082.KL, MSTR, KO</p>
+<h2>Active Signals</h2>
+
+<div class="card">
+  <div class="card-head">
+    <span class="ticker">MZH.SI</span>
+    <span class="badge muted">☆☆☆ SKIP</span>
+  </div>
+  <div class="metrics">
+    $0.87 &middot; nu=100.0 &middot; MA=-17% &middot;
+    Vol=-70% &middot; Sells(20d)=0
+  </div>
+  <div class="metrics">MA BUY</div>
+  <div class="action good">&rarr; BUY (price below MA)</div>
+  <p class="note">nu=100 &gt; 15 -- signal unreliable for this stock type</p>
+</div>
+<div class="card">
+  <div class="card-head">
+    <span class="ticker">MSTR</span>
+    <span class="badge muted">☆☆☆ SKIP</span>
+  </div>
+  <div class="metrics">
+    $153.92 &middot; nu=100.0 &middot; MA=+43% &middot;
+    Vol=+132% &middot; Sells(20d)=3
+  </div>
+  <div class="metrics">V3 SELL</div>
+  <div class="action critical">&rarr; TRIM 20-30% (frothy + extended + volume)</div>
+  <p class="note">nu=100 &gt; 15 -- signal unreliable for this stock type</p>
+</div>
 </section>
+
+<section>
+<h2>Full Watchlist Status</h2>
+<table>
+<thead><tr><th>Ticker</th><th>Close</th><th>nu now</th><th>nu med</th><th>Reliability</th><th>MA%</th><th>Vol%</th><th>Sells</th><th>Signal</th></tr></thead>
+<tbody><tr>
+<td>1082.KL</td><td>18.58</td><td>5.9</td>
+<td>100.0</td><td>★★★ HIGH</td>
+<td>-0%</td><td>-65%</td><td>1</td>
+<td>&mdash;</td></tr><tr>
+<td>AWX.SI</td><td>9.78</td><td>100.0</td>
+<td>6.2</td><td>☆☆☆ SKIP</td>
+<td>+6%</td><td>-36%</td><td>2</td>
+<td>&mdash;</td></tr><tr>
+<td>BEC.SI</td><td>4.14</td><td>100.0</td>
+<td>7.2</td><td>☆☆☆ SKIP</td>
+<td>-3%</td><td>-89%</td><td>1</td>
+<td>&mdash;</td></tr><tr>
+<td>BS6.SI</td><td>5.28</td><td>100.0</td>
+<td>12.7</td><td>☆☆☆ SKIP</td>
+<td>+23%</td><td>-27%</td><td>2</td>
+<td>&mdash;</td></tr><tr>
+<td>H02.SI</td><td>13.35</td><td>100.0</td>
+<td>18.2</td><td>☆☆☆ SKIP</td>
+<td>-12%</td><td>-24%</td><td>0</td>
+<td>&mdash;</td></tr><tr>
+<td>KO</td><td>88.25</td><td>100.0</td>
+<td>19.5</td><td>☆☆☆ SKIP</td>
+<td>+3%</td><td>+68%</td><td>0</td>
+<td>&mdash;</td></tr><tr>
+<td>MSTR</td><td>153.92</td><td>100.0</td>
+<td>100.0</td><td>☆☆☆ SKIP</td>
+<td>+43%</td><td>+132%</td><td>3</td>
+<td>V3 SELL</td></tr><tr>
+<td>MZH.SI</td><td>0.87</td><td>100.0</td>
+<td>7.1</td><td>☆☆☆ SKIP</td>
+<td>-17%</td><td>-70%</td><td>0</td>
+<td>MA BUY</td></tr><tr>
+<td>O39.SI</td><td>31.48</td><td>24.2</td>
+<td>35.0</td><td>★☆☆ LOW</td>
+<td>+7%</td><td>-57%</td><td>0</td>
+<td>&mdash;</td></tr></tbody>
+</table>
+</section>
+
+<section>
+<h2>Nu Environment &mdash; which stocks to trust signals on</h2>
+<svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img" aria-label="Nu environment by ticker"><rect x="0" y="0" width="640" height="330" fill="var(--surface-1)" /><line x1="124.3" y1="24" x2="124.3" y2="300" stroke="var(--good)" stroke-width="1.5" stroke-dasharray="4,3" /><text x="124.3" y="20" text-anchor="middle" class="axis-label">HIGH &lt;7</text><line x1="163.5" y1="24" x2="163.5" y2="300" stroke="var(--warning)" stroke-width="1.5" stroke-dasharray="4,3" /><text x="163.5" y="8" text-anchor="middle" class="axis-label">MED &lt;15</text><text x="80" y="49.0" text-anchor="end" class="axis-label">1082.KL</text><g><title>1082.KL: nu=5.9 (HIGH)</title><rect x="90" y="35" width="28.9" height="20" fill="var(--good)" rx="3" /></g><text x="126.9" y="49.0" class="axis-label">5.9</text><text x="80" y="79.0" text-anchor="end" class="axis-label">O39.SI</text><g><title>O39.SI: nu=24.2 (LOW)</title><rect x="90" y="65" width="118.7" height="20" fill="var(--serious)" rx="3" /></g><text x="216.7" y="79.0" class="axis-label">24.2</text><text x="80" y="109.0" text-anchor="end" class="axis-label">AWX.SI</text><g><title>AWX.SI: nu=100.0 (SKIP)</title><rect x="90" y="95" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="109.0" class="axis-label">100.0</text><text x="80" y="139.0" text-anchor="end" class="axis-label">H02.SI</text><g><title>H02.SI: nu=100.0 (SKIP)</title><rect x="90" y="125" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="139.0" class="axis-label">100.0</text><text x="80" y="169.0" text-anchor="end" class="axis-label">BS6.SI</text><g><title>BS6.SI: nu=100.0 (SKIP)</title><rect x="90" y="155" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="169.0" class="axis-label">100.0</text><text x="80" y="199.0" text-anchor="end" class="axis-label">MZH.SI</text><g><title>MZH.SI: nu=100.0 (SKIP)</title><rect x="90" y="185" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="199.0" class="axis-label">100.0</text><text x="80" y="229.0" text-anchor="end" class="axis-label">BEC.SI</text><g><title>BEC.SI: nu=100.0 (SKIP)</title><rect x="90" y="215" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="229.0" class="axis-label">100.0</text><text x="80" y="259.0" text-anchor="end" class="axis-label">MSTR</text><g><title>MSTR: nu=100.0 (SKIP)</title><rect x="90" y="245" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="259.0" class="axis-label">100.0</text><text x="80" y="289.0" text-anchor="end" class="axis-label">KO</text><g><title>KO: nu=100.0 (SKIP)</title><rect x="90" y="275" width="490.0" height="20" fill="var(--muted)" rx="3" /></g><text x="588.0" y="289.0" class="axis-label">100.0</text></svg>
+<div class="legend">
+<span><span class="swatch good"></span>HIGH (nu&lt;7)</span>
+<span><span class="swatch warning"></span>MED (nu&lt;15)</span>
+<span><span class="swatch serious"></span>LOW (nu&lt;25)</span>
+<span><span class="swatch muted"></span>SKIP</span>
+</div>
+</section>
+
+<section>
+<h2>Signal Map &mdash; nu vs price position</h2>
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" class="chart-svg" role="img" aria-label="Nu vs moving-average distance signal map"><rect x="0" y="0" width="640" height="400" fill="var(--surface-1)" /><line x1="56" y1="360.0" x2="616" y2="360.0" stroke="var(--grid)" stroke-width="1" /><text x="48" y="363.0" text-anchor="end" class="axis-label">-25%</text><line x1="56" y1="292.8" x2="616" y2="292.8" stroke="var(--grid)" stroke-width="1" /><text x="48" y="295.8" text-anchor="end" class="axis-label">-11%</text><line x1="56" y1="225.6" x2="616" y2="225.6" stroke="var(--grid)" stroke-width="1" /><text x="48" y="228.6" text-anchor="end" class="axis-label">2%</text><line x1="56" y1="158.4" x2="616" y2="158.4" stroke="var(--grid)" stroke-width="1" /><text x="48" y="161.4" text-anchor="end" class="axis-label">16%</text><line x1="56" y1="91.2" x2="616" y2="91.2" stroke="var(--grid)" stroke-width="1" /><text x="48" y="94.2" text-anchor="end" class="axis-label">29%</text><line x1="56" y1="24.0" x2="616" y2="24.0" stroke="var(--grid)" stroke-width="1" /><text x="48" y="27.0" text-anchor="end" class="axis-label">43%</text><text x="56.0" y="376" text-anchor="middle" class="axis-label">0</text><text x="168.0" y="376" text-anchor="middle" class="axis-label">21</text><text x="280.0" y="376" text-anchor="middle" class="axis-label">42</text><text x="392.0" y="376" text-anchor="middle" class="axis-label">63</text><text x="504.0" y="376" text-anchor="middle" class="axis-label">84</text><text x="616.0" y="376" text-anchor="middle" class="axis-label">105</text><line x1="56" y1="310.4" x2="616" y2="310.4" stroke="var(--good)" stroke-width="1.5" stroke-dasharray="5,4" /><line x1="56" y1="87.4" x2="616" y2="87.4" stroke="var(--critical)" stroke-width="1.5" stroke-dasharray="5,4" /><line x1="136.0" y1="24" x2="136.0" y2="360" stroke="var(--warning)" stroke-width="1.5" stroke-dasharray="5,4" /><line x1="56" y1="236.1" x2="616" y2="236.1" stroke="var(--baseline)" stroke-width="1" /><line x1="56" y1="24" x2="56" y2="360" stroke="var(--baseline)" stroke-width="1" /><line x1="56" y1="360" x2="616" y2="360" stroke="var(--baseline)" stroke-width="1" /><text x="336.0" y="396" text-anchor="middle" class="axis-title">Current nu (lower = fatter tails = more reliable)</text><text x="14" y="192.0" text-anchor="middle" class="axis-title" transform="rotate(-90 14 192.0)">% from 60d MA</text><g class="point"><title>AWX.SI: nu=100.0, MA=+6%, Vol=-36%, signals=none</title><circle cx="589.3" cy="208.6" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="200.6" text-anchor="end" class="point-label">AWX.SI</text></g><g class="point"><title>H02.SI: nu=100.0, MA=-12%, Vol=-24%, signals=none</title><circle cx="589.3" cy="296.6" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="288.6" text-anchor="end" class="point-label">H02.SI</text></g><g class="point"><title>BS6.SI: nu=100.0, MA=+23%, Vol=-27%, signals=none</title><circle cx="589.3" cy="123.5" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="115.5" text-anchor="end" class="point-label">BS6.SI</text></g><g class="point"><title>O39.SI: nu=24.2, MA=+7%, Vol=-57%, signals=none</title><circle cx="185.2" cy="200.8" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="195.2" y="192.8" text-anchor="start" class="point-label">O39.SI</text></g><g class="point"><title>MZH.SI: nu=100.0, MA=-17%, Vol=-70%, signals=MA BUY</title><circle cx="589.3" cy="321.4" r="7" fill="var(--good)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="313.4" text-anchor="end" class="point-label">MZH.SI</text></g><g class="point"><title>BEC.SI: nu=100.0, MA=-3%, Vol=-89%, signals=none</title><circle cx="589.3" cy="250.2" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="242.2" text-anchor="end" class="point-label">BEC.SI</text></g><g class="point"><title>1082.KL: nu=5.9, MA=-0%, Vol=-65%, signals=none</title><circle cx="87.4" cy="238.2" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="97.4" y="230.2" text-anchor="start" class="point-label">1082.KL</text></g><g class="point"><title>MSTR: nu=100.0, MA=+43%, Vol=+132%, signals=V3 SELL</title><circle cx="589.3" cy="24.0" r="7" fill="var(--critical)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="16.0" text-anchor="end" class="point-label">MSTR</text></g><g class="point"><title>KO: nu=100.0, MA=+3%, Vol=+68%, signals=none</title><circle cx="589.3" cy="222.1" r="7" fill="var(--muted)" stroke="var(--surface-1)" stroke-width="1.5" /><text x="579.3" y="214.1" text-anchor="end" class="point-label">KO</text></g></svg>
+<div class="legend">
+<span><span class="swatch good"></span>Buy zone (&lt;-15% of MA)</span>
+<span><span class="swatch critical"></span>Sell zone (&gt;30% of MA)</span>
+<span><span class="swatch muted"></span>Neutral</span>
+</div>
+</section>
+
+<section>
+<h2>Proximity Alerts &mdash; approaching signal thresholds</h2>
+<ul><li>H02.SI: MA=-12% &rarr; 3pp from buy zone</li><li>BS6.SI: MA=+23% &rarr; 7pp from sell zone</li></ul>
+</section>
+
 <footer>
 Not investment advice. Edit WATCHLIST in screener.py to add/remove tickers.
 </footer>
