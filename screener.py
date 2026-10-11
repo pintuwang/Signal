@@ -25,6 +25,7 @@ WATCHLIST = [
     # SGX
     "AWX.SI",    # AEM Holdings
     "A31.SI",    # Addvalue
+    "1J4.SI",    #JEP
     "MZH.SI",    # Nanofilm
     "500.SI",    # Tai Sin
     "5185.KL",   # Affin
